@@ -3,6 +3,11 @@
 {% block title %}
     Main
 {% endblock %}
+{% block nav_links %}
+    <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="{% url 'add_guest' %}">Добавить запись</a>
+    </li>
+{% endblock %}
 {% block header %}
     <h1>Гостевая книга</h1>
 {% endblock %}
@@ -23,7 +28,7 @@
                               32-14.3 32-32s-14.3-32-32-32H96z"/>
                         </svg>
                     </a>
-                    <a href="" class="card_links ms-3">
+                    <a href="{% url 'guest_delete' guest.pk %}" class="card_links ms-3">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" style="width: 25px;" class="mb-1">
                             <path d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8
                              79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7
